@@ -1,0 +1,25 @@
+.keyboard {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Small, fixed-size squares */
+.key {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #004080;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.25rem;
+  font-family: var(--tvm-font);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.key:active {
+  background: #003366;
+}

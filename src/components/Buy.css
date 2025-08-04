@@ -1,0 +1,206 @@
+@import '../theme.css';
+
+/* ---------------------------------------------
+   Quick-pick screen (restored light-blue)
+   --------------------------------------------- */
+.screen.buy-quick {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+  background: #ffffff;
+}
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.quick-grid button {
+  background: #ADD8E6;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  font-family: var(--tvm-font);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.find-other {
+  margin-top: auto;
+}
+.find-other button {
+  background: #ADD8E6;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--tvm-font);
+  cursor: pointer;
+}
+.find-other button svg {
+  margin-right: 0.5rem;
+}
+
+/* ---------------------------------------------
+   Find-other screen layout
+   --------------------------------------------- */
+.screen.buy-find {
+  display: grid;
+  grid-template-columns: 3fr 1fr;    /* keyboard 75% | station list 25% */
+  grid-template-rows: auto 1fr auto; /* search | stretchable body | back */
+  height: 100%;
+  padding: 1rem;
+  background: #ffffff;
+  gap: 1rem;                         /* equal vertical gap */
+}
+
+/* ---------------------------------------------
+   Search box restyled to match keys
+   --------------------------------------------- */
+.search-input {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 0 1rem;
+  background: #004080;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+.search-input svg {
+  margin-right: 0.5rem;
+  color: #ffffff;
+}
+.search-input input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: var(--tvm-font);
+}
+.search-input input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+/* ---------------------------------------------
+   Keyboard panel (QWERTY, square-ish keys)
+   --------------------------------------------- */
+.keyboard-panel {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;              /* equal vertical gap between rows */
+  height: var(--kb-height);
+  padding: 0;
+}
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;              /* equal horizontal gap between keys */
+}
+.key {
+  flex: 0 0 auto;
+  width: 72px;
+  height: 84px;
+  box-sizing: border-box;
+  background: #004080;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+  font-family: var(--tvm-font);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.key.clear,
+.key.backspace {
+  font-weight: bold;
+}
+.space-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.space-key {
+  flex: 0 0 auto;
+  width: 240px;
+  height: 84px;
+  background: #004080;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+  font-family: var(--tvm-font);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------------------------------------
+   Station list (unchanged)
+   --------------------------------------------- */
+.station-list-top {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.list-header {
+  font-family: var(--tvm-font);
+  font-size: 1rem;
+  color: #333333;
+  text-align: center;
+  width: 100%;
+}
+.station-item {
+  background: #ADD8E6;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-family: var(--tvm-font);
+  font-size: 1rem;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+.no-match {
+  font-family: var(--tvm-font);
+  color: #333;
+  font-size: 1rem;
+}
+
+/* ---------------------------------------------
+   Back button fixed bottom-left
+   --------------------------------------------- */
+.back-button {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0.75rem;
+  font-family: var(--tvm-font);
+  cursor: pointer;
+  z-index: 1000;
+}
+.back-button svg {
+  margin-right: 0.5rem;
+}

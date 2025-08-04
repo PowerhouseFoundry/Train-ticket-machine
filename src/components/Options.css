@@ -1,0 +1,31 @@
+@import './Page.css';
+
+/* 2×2 grid for when first-class exists */
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Each column holds its own buttons */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Match button styling from Page.css */
+.column button {
+  background: var(--tvm-card-bg);
+  color: var(--tvm-btn-text);
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  font-size: 1.25rem;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  font-family: var(--tvm-font);
+  text-align: center;
+  width: 100%;
+}

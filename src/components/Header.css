@@ -1,0 +1,59 @@
+@import '../theme.css';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #172964;       /* Northern navy-blue */
+  padding: 1rem 2rem;        /* generous side padding */
+  min-height: 160px;         /* taller header */
+}
+
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Push logo rightwards */
+.header-left {
+  margin-right: 2rem;
+}
+
+/* Give title big side-margins */
+.header-center {
+  flex: 1;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+/* Make logo fill almost full height */
+.header-logo {
+  height: 140px;
+  width: auto;
+}
+
+/* Title styling: all-caps, centered */
+.header-center h1 {
+  margin: 0;
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: var(--tvm-font);
+}
+
+/* Push clock leftwards */
+.header-right {
+  margin-left: 2rem;
+}
+
+.header-right .datetime {
+  color: white;
+  font-size: 1.25rem;
+  font-family: var(--tvm-font);
+}
+.header-right .datetime > div {
+  line-height: 1.2;
+}

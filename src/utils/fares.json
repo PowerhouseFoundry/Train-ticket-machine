@@ -1,0 +1,10 @@
+{
+  "London Kings Cross":    { "single": 100.0, "return": 180.0 },
+  "Edinburgh":             { "single": 70.0,  "return": 140.0 },
+  "Birmingham":            { "single": 40.0,  "return":  72.0 },
+  "Manchester":            { "single": 30.0,  "return":  54.0 },
+  "Liverpool":             { "single": 35.0,  "return":  63.0 },
+  "Newcastle":             { "single": 50.0,  "return":  90.0 },
+  "Bristol":               { "single": 50.0,  "return":  90.0 },
+  "Bath":                  { "single": 60.0,  "return": 108.0 }
+}

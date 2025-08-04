@@ -1,0 +1,72 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Keyboard from './Keyboard';
+import { stations } from '../stations';
+import Header from './Header';
+import { Search } from 'lucide-react';
+
+export default function Buy() {
+  const [query, setQuery] = useState('');
+  const [showAll, setShowAll] = useState(false);
+  const nav = useNavigate();
+
+  const origin = 'Leeds';
+  const quickStations = [
+    'York','Manchester','Bradford','Harrogate','Wakefield',
+    'Huddersfield','Ilkley','Keighley','Ripon','Doncaster'
+  ];
+
+  const filtered = stations.filter(s =>
+    s.toLowerCase().startsWith(query.toLowerCase())
+  );
+
+  if (!showAll) {
+    return (
+      <>
+        <Header title={\`Choose one of the quick selects from \${origin} or tap find other tickets\`} />
+        <div className="screen">
+          <div className="list">
+            {quickStations.map(s => (
+              <button
+                key={s}
+                onClick={() => nav('/options', { state: { station: s } })}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+          <div className="button-list">
+            <button onClick={() => setShowAll(true)}>
+              <Search /> Find other tickets
+            </button>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <Header title="Find other tickets" />
+      <div className="screen">
+        <input
+          value={query}
+          placeholder="Search station"
+          readOnly
+          onClick={() => Keyboard.show(setQuery)}
+        />
+        <Keyboard />
+        <div className="list">
+          {filtered.map(s => (
+            <button
+              key={s}
+              onClick={() => nav('/options', { state: { station: s } })}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}

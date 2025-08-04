@@ -1,0 +1,19 @@
+@import '../theme.css';
+
+.screen.home-container {
+  flex: 1; display: flex; justify-content: center; align-items: center;
+}
+.home-buttons {
+  display: flex; gap: 2rem;
+}
+.home-button {
+  background: var(--tvm-card-bg); color: var(--tvm-btn-text);
+  border: none; border-radius: 0.5rem;
+  width: 160px; height: 160px;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+  font-size: 1rem; font-family: var(--tvm-font);
+}
+.home-button:hover { background: #5EAFCF; }
+.home-button svg { width: 48px; height: 48px; margin-bottom: 0.5rem; }
